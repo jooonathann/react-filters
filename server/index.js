@@ -10,5 +10,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use(route);
 const port = process.env.PORT || 3010;
 app.listen(port, () => {
-  console.log(`server on port 3010`);
+  console.log(`server on port ${port}`);
 });
