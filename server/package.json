@@ -8,7 +8,8 @@
   },
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js"
+    "start": "index.js",
+    "server": "nodemon index.js"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
