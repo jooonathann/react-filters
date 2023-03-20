@@ -64,7 +64,7 @@ const CreateCharacter = ({ createNewCharacter, isActive }) => {
     createNewCharacter(newCharacter);
 
     setTimeout(() => {
-      navigate(`/character/${newCharacter.id}`);
+      navigate(`/characters/${newCharacter.id}`);
     }, "250");
   };
 
