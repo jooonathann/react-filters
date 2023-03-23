@@ -38,14 +38,14 @@ export default function charactersReducer(state = initialState, action) {
 }
 
 export async function fetchCharacters(dispatch) {
-  const response = await fetch("https://react-postgres-server.onrender.com/characters");
+  const response = await fetch("http://localhost:3010/characters");
   const res = await response.json();
   dispatch({ type: "characters/charactersLoaded", payload: res });
 }
 
 export function deleteharacters(personId) {
   return async function (dispatch) {
-    await fetch(`https://react-postgres-server.onrender.com/characters${personId}`, {
+    await fetch(`http://localhost:3010/characters/${personId}`, {
       method: "DELETE",
     });
     return dispatch({ type: "characters/characterDeleted", payload: personId });
@@ -57,7 +57,7 @@ export function createNewCharacter(body) {
   return async function (dispatch) {
     console.log("---bodyyyyy----  ", body);
 
-    await fetch(`https://react-postgres-server.onrender.com/characters`, {
+    await fetch(`http://localhost:3010/characters`, {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
@@ -70,7 +70,7 @@ export function createNewCharacter(body) {
 export function editCharacter(body) {
   console.log("body  of SLICE", body);
   return async function (dispatch) {
-    await fetch(`https://react-postgres-server.onrender.com/characters/${body.id}`, {
+    await fetch(`http://localhost:3010/characters/${body.id}`, {
       method: "PUT",
       mode: "cors",
       headers: { "Content-Type": "application/json" },

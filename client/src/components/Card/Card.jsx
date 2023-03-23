@@ -21,7 +21,7 @@ export const Card = ({ characterOrFilter, deleteharacters }) => {
           X
         </button>
       </span>
-      <Link className="cardContent" to={`character/${item.id}`}>
+      <Link className="cardContent" to={`characters/${item.id}`}>
         <h2 className="cardTitle">
           {item.name} <br />
           {item.lastname}

@@ -37,8 +37,8 @@ export const App = ({ characters }) => {
               path="create-new-character"
               element={<CreateCharacter />}
             />
-            <Route path="character/:id" element={<ShowCharacter />} />
-            <Route path="character/:id/edit" element={<EditCharacter />} />
+            <Route path="characters/:id" element={<ShowCharacter />} />
+            <Route path="characters/:id/edit" element={<EditCharacter />} />
             <Route path="*" element={<h1>Error 404</h1>} />
           </Routes>
         ) : (

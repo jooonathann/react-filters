@@ -1,13 +1,13 @@
 const { Pool } = require("pg");
 require('dotenv').config();
 
-
+console.log(process.env.POSTGRES_USER || 'postgres')
 const pool = new Pool({
-  user: process.env.POSTGRES_USER,
-  host: process.env.POSTGRES_HOST,
-  database: process.env.POSTGRES_DATABASE,
-  password: process.env.POSTGRES_PASSWORD,
-  port: process.env.POSTGRES_PORT,
+  user: process.env.POSTGRES_USER || 'postgres',
+  host: process.env.POSTGRES_HOST || 'localhost',
+  database: process.env.POSTGRES_DATABASE || 'reactpostgresql',
+  password: process.env.POSTGRES_PASSWORD || 'postgres',
+  port: process.env.POSTGRES_PORT || '5432',
 });
 
 const getCharacters = async (req, res) => {

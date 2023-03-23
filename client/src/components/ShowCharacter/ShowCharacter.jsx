@@ -5,7 +5,7 @@ import "../../css/index.css";
 const ShowCharacter = ({ characters, isActive }) => {
   const { id } = useParams();
 
-  // console.log(characters);
+  console.log(characters);
   const indexOfChar = characters.findIndex((ele) => ele.id === parseInt(id));
 
   useEffect(() => {
