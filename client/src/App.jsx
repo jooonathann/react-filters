@@ -39,10 +39,34 @@ export const App = ({ characters }) => {
             />
             <Route path="characters/:id" element={<ShowCharacter />} />
             <Route path="characters/:id/edit" element={<EditCharacter />} />
-            <Route path="*" element={<h1>Error 404</h1>} />
+            <Route
+              path="*"
+              element={<h1 className="noCharacters">Error 404</h1>}
+            />
           </Routes>
         ) : (
-          <h1>No characters to show</h1>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <FiltersSection />
+                  <div className="noCharactersSection">
+                    <h1 className="noCharacters">No characters to show</h1>
+                  </div>
+                </>
+              }
+            />
+            <Route
+              exact
+              path="create-new-character"
+              element={<CreateCharacter />}
+            />
+            <Route path="characters/:id" element={<ShowCharacter />} />
+            <Route path="characters/:id/edit" element={<EditCharacter />} />
+            <Route path="*" element={<h1>Error 404</h1>} />
+          </Routes>
         )}
       </div>
     </div>
@@ -52,6 +76,5 @@ export const App = ({ characters }) => {
 const mapStateToProps = (state) => {
   return { characters: state.characters };
 };
-
 
 export default connect(mapStateToProps, null)(App);

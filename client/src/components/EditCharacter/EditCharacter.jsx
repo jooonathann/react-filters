@@ -12,8 +12,11 @@ const EditCharacter = ({ editCharacter }) => {
   const fetchCharacterInfo = async () => {
     try {
       const response = await fetch(
-        `https://react-postgres-server.onrender.com/characters/${idParams}`
+        `http://localhost:3010/characters/${idParams}`
       );
+      // const response = await fetch(
+      //   `https://react-postgres-server.onrender.com/characters/${idParams}`
+      // );
       const res = await response.json();
       setCharacterInfoToEdit(res[0]);
     } catch (error) {

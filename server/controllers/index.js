@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 require('dotenv').config();
 
-console.log(process.env.POSTGRES_USER || 'postgres')
+console.log('ENVVVV ',process.env.POSTGRES_USER )
 const pool = new Pool({
   user: process.env.POSTGRES_USER || 'postgres',
   host: process.env.POSTGRES_HOST || 'localhost',
